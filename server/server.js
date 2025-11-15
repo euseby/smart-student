@@ -4,7 +4,24 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://smart-student-qpse5p64w-eusebys-projects.vercel.app',
+  'https://smart-student.vercel.app'
+];
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Routes
