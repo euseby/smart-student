@@ -105,8 +105,6 @@ Frontend va rula pe `http://localhost:5173`
 ⚠️ **IMPORTANT pentru Git:**
 - Fișierul `.env` NU este inclus în repository
 - Vezi `.env.example` pentru structura necesară
-- Nu comite niciodată parole sau chei secrete în cod
-- Folosește variabile de mediu pentru date sensibile
 
 ## 📂 Structura Proiectului
 
